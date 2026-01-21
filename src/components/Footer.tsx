@@ -30,7 +30,7 @@ const Footer = () => {
             </div>
             <p className="text-sm opacity-80 leading-relaxed mb-6">
               Beyond courses. Focused on careers. We prepare you to thrive in the tech industry 
-              with industry-ready programs and 100% placement assistance.
+              with industry-ready programs and 100% job assistance.
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors">
@@ -40,7 +40,7 @@ const Footer = () => {
                 <Instagram className="w-5 h-5" />
               </a>
               <a>
-                <p>@cloudtechsolutions2026</p>
+                <p>@cloudtechnologysolutions</p>
               </a>
             </div>
           </div>

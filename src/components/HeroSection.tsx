@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { submitForm } from "@/utils/api";
+import CTSLogo from "@/assets/CTS.png";
 
 const HeroSection = () => {
   const [formData, setFormData] = useState({
@@ -61,30 +62,58 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="hero-gradient hero-pattern relative overflow-hidden">
-      {/* Background decorations */}
+    <section className="relative overflow-hidden min-h-screen">
+      {/* Background Video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ pointerEvents: 'none' }}
+      >
+        <source src="/background.mov" type="video/quicktime" />
+        <source src="/background.mov" type="video/mp4" />
+      </video>
+
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/40"></div>
+
+      {/* Animated Background decorations */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 rounded-full blur-3xl animate-bounce" style={{ animationDuration: '3s' }} />
+        <div className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-bl from-green-500/15 to-teal-500/15 rounded-full blur-2xl animate-ping" style={{ animationDuration: '2s' }} />
       </div>
 
-      <div className="container mx-auto px-4 py-20 md:py-28 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-4 py-12 md:py-16 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Content */}
-          <div className="text-white">
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-sm font-medium mb-6">
-              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse-slow" />
-              Beyond courses. Focused on careers
-            </span>
+          <div className="text-white text-center lg:text-left">
+            <div className="mb-2">
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-sm font-medium mb-3">
+                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse-slow" />
+                Beyond courses. Focused on careers
+              </span>
+              
+              <div className="mb-3 flex justify-center lg:justify-start">
+                <img src={CTSLogo} alt="Cloud Tech Solutions" className="w-64 h-56 md:w-96 md:h-84 lg:w-[500px] lg:h-[440px] object-contain hover:scale-105 transition-transform" />
+              </div>
+              
+              <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-black mb-0 leading-tight bg-gradient-to-r from-yellow-300 via-cyan-300 to-blue-300 bg-clip-text text-transparent drop-shadow-2xl">
+                Cloud Technology Solutions
+              </h2>
+            </div>
             
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white">
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-3 leading-tight text-white">
               Launch Your Career with{" "}
               <span className="text-yellow-300">Industry-Ready</span> Programs
-            </h1>
+            </h2>
             
             <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-xl">
               Join thousands of successful graduates who landed their dream tech jobs. 
-              Get hands-on training, real projects, and 100% placement assistance.
+              Get hands-on training, real projects, and 100% job assistance.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">

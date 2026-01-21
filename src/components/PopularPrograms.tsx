@@ -9,8 +9,8 @@ const programs = [
     title: "SAP Training",
     subtitle: "Finance (FI), Controlling (CO) | ABAP | Materials Management (MM) | Sales & Distribution (SD) | BASIS",
     duration: "3 Months",
-    mode: "Online/Offline",
-    assistance: "100% Assistance",
+    mode: "Online",
+    assistance: "100% Job Assistance",
     color: "from-blue-500 to-blue-600",
   },
   {
@@ -19,8 +19,8 @@ const programs = [
     title: "Cloud Computing",
     subtitle: "AWS | Azure | GCP | Multi-Cloud",
     duration: "3 Months",
-    mode: "Online/Offline",
-    assistance: "100% Assistance",
+    mode: "Online",
+    assistance: "100% Job Assistance",
     color: "from-purple-500 to-purple-600",
   },
   {
@@ -29,8 +29,8 @@ const programs = [
     title: "DevOps Engineering",
     subtitle: "CI/CD | Docker | Kubernetes | Jenkins",
     duration: "4 Months",
-    mode: "Online/Offline",
-    assistance: "100% Assistance",
+    mode: "Online",
+    assistance: "100% Job Assistance",
     color: "from-orange-500 to-orange-600",
   },
   {
@@ -39,8 +39,8 @@ const programs = [
     title: "Python Full-Stack",
     subtitle: "Django | Flask | React | PostgreSQL",
     duration: "2 Months",
-    mode: "Online/Offline",
-    assistance: "100% Assistance",
+    mode: "Online",
+    assistance: "100% Job Assistance",
     color: "from-green-500 to-green-600",
   },
 ];

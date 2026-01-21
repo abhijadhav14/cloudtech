@@ -8,64 +8,65 @@ const models = [
   {
     id: "classic",
     name: "Classic Model",
-    tagline: "The Flagship",
-    subtitle: "Zero Upfront Risk. Maximum Reward.",
-    description: "Start learning now, pay after placement. Our most popular model designed for students who believe in their potential.",
+    tagline: "Start training",
+    subtitle: "",
+    description: "Start learning now. Our most popular model designed for students who believe in their potential.",
     color: "from-blue-500 to-blue-600",
     features: [
-      { text: "Pay only after you get placed", included: true },
-      { text: "100% Placement Guarantee", included: true },
-      { text: "No upfront payment required", included: true },
+      { text: "Live Instructor-led online sessions", included: true },
+      { text: "SAP login aceess(ECC and S/4HANA)", included: true },   
       { text: "Access to all learning resources", included: true },
       { text: "Dedicated mentor support", included: true },
-      { text: "Interview preparation", included: true },
-      { text: "Resume building", included: true },
-      { text: "Premium networking events", included: false },
+      { text: "Resume building", included: true }
     ],
-    price: "Pay After Placement",
-    priceNote: "Deduct a percentage from first 2 months salary",
+   // price: "₹25,000",
+    priceNote: "",
     popular: true,
   },
   {
     id: "premium",
     name: "Premium Model",
-    tagline: "In-Person Excellence",
-    subtitle: "In-Person learning with flexible payments.",
-    description: "Get the full classroom experience with flexible EMI options. Perfect for those who prefer face-to-face learning.",
+    tagline: "Book career call",
+    subtitle: "",
+    description: "Best for professionals who wants structured high-touch online learning.",
     color: "from-purple-500 to-purple-600",
     features: [
-      { text: "In-person classroom training", included: true },
-      { text: "Flexible EMI options", included: true },
-      { text: "100% Placement Assistance", included: true },
+      { text: "Live Instructor-led online sessions", included: true },
+      { text: "SAP login aceess(ECC and S/4HANA)", included: true },
+      
       { text: "Access to all learning resources", included: true },
       { text: "Dedicated mentor support", included: true },
-      { text: "Interview preparation", included: true },
-      { text: "Resume building", included: true },
-      { text: "Premium networking events", included: true },
+      { text: "Interview preparation(mock interviews)", included: true },
+      { text: "Resume and LinkedIn profile building", included: true },
+      { text: "100% Job Assistance", included: true }
+
+
     ],
-    price: "₹35,000 - ₹50,000",
-    priceNote: "EMI options available starting ₹5,000/month",
+    //price: "₹35,000 - ₹45,000",
+    priceNote: "",
     popular: false,
   },
   {
-    id: "self-paced",
-    name: "Self-Paced Model",
-    tagline: "Learn at Your Speed",
-    subtitle: "Flexible learning on your schedule.",
-    description: "Perfect for working professionals. Access recorded sessions and learn at your own pace with weekend live doubt sessions.",
+    id: "gold",
+    name: "Gold Model",
+    tagline: "Enroll now",
+    subtitle: "Best for working professionals and career switch. Weekend live doubt sessions.",
+    description: "",
     color: "from-green-500 to-green-600",
     features: [
-      { text: "Recorded video sessions", included: true },
-      { text: "Weekend live doubt clearing", included: true },
-      { text: "Placement Assistance", included: true },
+      { text: "Live Instructor-led online sessions", included: true },
+      { text: "SAP login aceess(ECC and S/4HANA)", included: true },
+      
       { text: "Access to all learning resources", included: true },
-      { text: "Email mentor support", included: true },
-      { text: "Interview preparation", included: false },
-      { text: "Resume building", included: false },
-      { text: "Premium networking events", included: false },
+      { text: "Dedicated mentor support", included: true },
+      { text: "Interview preparation(mock interviews)", included: true },
+      { text: "Resume and LinkedIn profile building", included: true },
+      { text: "100% Job Assistance", included: true },
+      { text: "Recorded video sessions access", included: true },
+      { text: "Weekend live doubt clearing", included: true },
     ],
-    price: "₹15,000 - ₹25,000",
-    priceNote: "One-time payment with lifetime access",
+   // price: "₹45,000 - ₹55,000",
+    priceNote: "",
     popular: false,
   },
 ];
@@ -94,7 +95,11 @@ const EngagementModels = () => {
             {models.map((model) => (
               <div 
                 key={model.id}
-                className={`bg-card rounded-2xl overflow-hidden card-hover relative ${
+                className={`bg-card rounded-2xl overflow-hidden card-hover relative border-2 ${
+                  model.id === "classic" ? "border-blue-500" :
+                  model.id === "premium" ? "border-purple-500" :
+                  "border-green-500"
+                } ${
                   model.popular ? "ring-2 ring-primary" : ""
                 }`}
               >
@@ -107,7 +112,7 @@ const EngagementModels = () => {
                 
                 <div className={`h-2 bg-gradient-to-r ${model.color}`} />
                 
-                <div className="p-6">
+                <div className="p-6 flex flex-col h-full">
                   <div className="mb-4">
                     <p className="text-sm text-primary font-medium">{model.tagline}</p>
                     <h3 className="font-heading text-2xl font-bold text-foreground mt-1">
@@ -122,7 +127,7 @@ const EngagementModels = () => {
                     {model.description}
                   </p>
 
-                  <div className="space-y-3 mb-6">
+                  <div className="space-y-3 mb-6 flex-grow">
                     {model.features.map((feature, index) => (
                       <div key={index} className="flex items-center gap-2">
                         {feature.included ? (
@@ -137,20 +142,28 @@ const EngagementModels = () => {
                     ))}
                   </div>
 
-                  <div className="pt-6 border-t border-border">
-                    <p className="text-2xl font-bold text-foreground mb-1">{model.price}</p>
-                    <p className="text-xs text-muted-foreground mb-4">{model.priceNote}</p>
-                    
-                    <Button 
-                      className={`w-full ${model.popular ? "hero-gradient" : ""}`}
-                      variant={model.popular ? "default" : "outline"}
-                      asChild
-                    >
-                      <Link to="/contact">
-                        Get Started
-                        <ArrowRight className="w-4 h-4 ml-2" />
-                      </Link>
-                    </Button>
+                  <div className="pt-6 border-t border-border mt-auto">
+                    <div className="flex items-center justify-end gap-2">
+                      <Button 
+                        variant="outline"
+                        className="shrink-0 whitespace-nowrap"
+                        asChild
+                      >
+                        <Link to="/contact">
+                          Free Demo
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </Link>
+                      </Button>
+                      <Button 
+                        className={`bg-gradient-to-r ${model.color} text-white hover:shadow-lg shrink-0 whitespace-nowrap`}
+                        asChild
+                      >
+                        <Link to="/contact">
+                          Get Started
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </Link>
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -171,21 +184,10 @@ const EngagementModels = () => {
           <div className="max-w-3xl mx-auto space-y-6">
             <div className="bg-card rounded-xl p-6">
               <h3 className="font-heading font-bold text-foreground mb-2">
-                What is the Classic Model (Pay After Placement)?
+                What is the Classic Model?
               </h3>
               <p className="text-muted-foreground">
-                With our Classic Model, you don't pay anything upfront. You only start paying after you get placed 
-                in a job. A percentage of your salary for the first 2 months goes towards course fees.
-              </p>
-            </div>
-            
-            <div className="bg-card rounded-xl p-6">
-              <h3 className="font-heading font-bold text-foreground mb-2">
-                Are EMI options available?
-              </h3>
-              <p className="text-muted-foreground">
-                Yes! For the Premium Model, we offer flexible EMI options starting at ₹5,000 per month. 
-                We've partnered with leading financial institutions to make this possible.
+                With our Classic Model, allows you to start learning for freshers with minimal upfront cost.
               </p>
             </div>
             
@@ -194,9 +196,7 @@ const EngagementModels = () => {
                 What if I don't get placed?
               </h3>
               <p className="text-muted-foreground">
-                For the Classic Model, if you don't get placed within 6 months of completing the program, 
-                you don't pay anything. That's our guarantee. For other models, we continue to provide 
-                placement support until you land a job.
+                Placement support is provided only under gold model. For the classic model, we provide quality training, resource, and guidance to help you become job ready.
               </p>
             </div>
             
@@ -205,8 +205,7 @@ const EngagementModels = () => {
                 Can I switch between models?
               </h3>
               <p className="text-muted-foreground">
-                Yes, you can upgrade from Self-Paced to Premium model at any time by paying the difference. 
-                However, once you start with the Classic Model, switching is not possible.
+                Yes, you can upgrade from Classic to Premium model and Premium model to Gold model at any time by paying the difference.
               </p>
             </div>
           </div>
@@ -214,15 +213,17 @@ const EngagementModels = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 hero-gradient">
-        <div className="container mx-auto px-4 text-center text-primary-foreground">
-          <h2 className="font-heading text-3xl font-bold mb-4">
-            Still have questions?
+      <section className="py-20 hero-gradient relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10" />
+        <div className="container mx-auto px-4 text-center text-primary-foreground relative z-10">
+          <h2 className="font-heading text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-yellow-300 via-cyan-200 to-blue-200 bg-clip-text text-transparent drop-shadow-lg">
+            Cloud Technology Solutions
           </h2>
-          <p className="text-lg opacity-90 mb-8">
-            Talk to our counselors and find the perfect model for you.
+
+          <p className="text-lg opacity-90 mb-10 max-w-2xl mx-auto">
+            Still have questions? Talk to our counselors and find the perfect model for you.
           </p>
-          <Button size="lg" className="bg-white text-primary hover:bg-white/90" asChild>
+          <Button size="lg" className="bg-white text-blue-600 hover:bg-white/90 font-bold text-lg px-8 py-6 rounded-full shadow-2xl" asChild>
             <Link to="/contact">
               Get Free Counseling
               <ArrowRight className="w-5 h-5 ml-2" />

@@ -31,14 +31,20 @@ const About = () => {
   const team = [
     {
       name: "N V Vinay",
-      role: "Founder & Lead Trainer",
-      experience: "15+ Years in IT Industry",
+      role: "Managing Director (MD)",
+      experience: "",
       initials: "SK",
     },
     {
-      name: "Akshay V",
-      role: "SAP Trainer",
-      experience: "12+ Years in SAP Consulting",
+      name: "Akshay Vaidya",
+      role: "Founder",
+      experience: "",
+      initials: "AV",
+    },
+    {
+      name: "Lakshmi Narashima",
+      role: "Co-Founder",
+      experience: "",
       initials: "AV",
     },
 
@@ -192,21 +198,21 @@ const About = () => {
               <BookOpen className="w-12 h-12 mx-auto mb-4" />
               <h3 className="font-heading text-xl font-bold mb-3">Practical Learning</h3>
               <p className="opacity-90">
-                70% hands-on training with real industry projects and lab environments.
+                Hands-on online training with real industry projects and guided practices.
               </p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center text-primary-foreground">
               <Lightbulb className="w-12 h-12 mx-auto mb-4" />
               <h3 className="font-heading text-xl font-bold mb-3">Industry Experts</h3>
               <p className="opacity-90">
-                Learn from trainers with 12+ years of real-world industry experience.
+                Learn from trainers with real industry and implementation experience.
               </p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center text-primary-foreground">
               <Award className="w-12 h-12 mx-auto mb-4" />
               <h3 className="font-heading text-xl font-bold mb-3">Career Support</h3>
               <p className="opacity-90">
-                100% placement assistance with resume building and interview preparation.
+                Job oriented guidance including resume building, interview preparation, and career assistance.
               </p>
             </div>
           </div>

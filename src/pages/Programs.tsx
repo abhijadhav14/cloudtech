@@ -12,12 +12,12 @@ const programs = [
     title: "SAP Training",
     subtitle: "Finance (FI), Controlling (CO) | ABAP | Materials Management (MM) | Sales & Distribution (SD) | BASIS",
     duration: "3 Months",
-    mode: "Online/Offline",
-    assistance: "100% Assistance",
+    mode: "Online",
+    assistance: "100% Job Assistance",
     color: "from-blue-500 to-blue-600",
     description: "Master SAP with hands-on lab experience. Learn from industry experts with real-world implementation experience.",
     topics: ["SAP Modules", "Fico Configuration", "Financial Accounting", "Controlling", "SAP ERP", "SAP HANA"],
-    price: "₹25,000",
+    //price: "₹25,000",
     rating: 4.9,
     students: 500,
   },
@@ -27,12 +27,12 @@ const programs = [
     title: "Cloud Computing",
     subtitle: "AWS | Azure | GCP | Multi-Cloud",
     duration: "3 Months",
-    mode: "Online/Offline",
-    assistance: "100% Assistance",
+    mode: "Online",
+    assistance: "100% Job Assistance",
     color: "from-purple-500 to-purple-600",
     description: "Comprehensive cloud training covering major platforms. Prepare for cloud certifications and real-world cloud architecture.",
     topics: ["AWS Solutions Architect", "Azure Administrator", "GCP Fundamentals", "Cloud Security", "Serverless Architecture", "Container Services"],
-    price: "₹20,000",
+    //price: "₹25,000",
     rating: 4.8,
     students: 750,
   },
@@ -42,12 +42,12 @@ const programs = [
     title: "DevOps Engineering",
     subtitle: "CI/CD | Docker | Kubernetes | Jenkins",
     duration: "4 Months",
-    mode: "Online/Offline",
-    assistance: "100% Assistance",
+    mode: "Online",
+    assistance: "100% Job Assistance",
     color: "from-orange-500 to-orange-600",
     description: "Learn end-to-end DevOps practices with hands-on projects. Master automation, containerization, and orchestration.",
     topics: ["Docker & Containers", "Kubernetes Orchestration", "Jenkins CI/CD", "Terraform IaC", "Ansible Automation", "Monitoring & Logging"],
-    price: "₹15,000",
+    //price: "₹30,000",
     rating: 4.9,
     students: 600,
   },
@@ -57,12 +57,12 @@ const programs = [
     title: "Python Full-Stack",
     subtitle: "Django | Flask | React | PostgreSQL",
     duration: "4 Months",
-    mode: "Online/Offline",
-    assistance: "100% Assistance",
+    mode: "Online",
+    assistance: "100% Job Assistance",
     color: "from-yellow-500 to-yellow-600",
     description: "Become a full-stack developer with Python. Build web applications from scratch with modern frameworks.",
     topics: ["Python Core", "Django Framework", "Flask Microservices", "React Frontend", "RESTful APIs", "Database Design"],
-    price: "₹12,000",
+    //price: "₹22,000",
     rating: 4.8,
     students: 800,
   },
@@ -72,14 +72,59 @@ const programs = [
     title: "Data Engineering",
     subtitle: "ETL | Spark | Airflow | Data Warehousing",
     duration: "4 Months",
-    mode: "Online/Offline",
-    assistance: "100% Assistance",
+    mode: "Online",
+    assistance: "100% Job Assistance",
     color: "from-indigo-500 to-indigo-600",
     description: "Master data pipeline development and big data technologies. Learn to build scalable data infrastructure.",
     topics: ["Apache Spark", "Airflow Orchestration", "Data Warehousing", "ETL Pipelines", "SQL & NoSQL", "Data Modeling"],
-    price: "₹10,000",
+    //price: "₹20,000",
     rating: 4.9,
     students: 350,
+  },
+  {
+    id: "salesforce",
+    icon: "🔷",
+    title: "Salesforce CRM",
+    subtitle: "Admin | Developer | Sales Cloud | Service Cloud",
+    duration: "3 Months",
+    mode: "Online",
+    assistance: "100% Job Assistance",
+    color: "from-cyan-500 to-cyan-600",
+    description: "Become a Salesforce expert with comprehensive training. Learn CRM administration, development, and cloud solutions.",
+    topics: ["Salesforce Admin", "Apex Programming", "Lightning Components", "Sales Cloud", "Service Cloud", "Salesforce Integration"],
+    //price: "₹28,000",
+    rating: 4.8,
+    students: 420,
+  },
+  {
+    id: "dotnet",
+    icon: "⚡",
+    title: ".NET Full Stack",
+    subtitle: "C# | ASP.NET Core | React | SQL Server",
+    duration: "4 Months",
+    mode: "Online",
+    assistance: "100% Job Assistance",
+    color: "from-violet-500 to-violet-600",
+    description: "Master Microsoft .NET ecosystem for enterprise development. Build scalable web applications with modern frameworks.",
+    topics: ["C# Advanced", "ASP.NET Core", "Entity Framework", "Web APIs", "React Frontend", "SQL Server"],
+    //price: "₹24,000",
+    rating: 4.7,
+    students: 550,
+  },
+  {
+    id: "ai",
+    icon: "🤖",
+    title: "Artificial Intelligence",
+    subtitle: "Machine Learning | Deep Learning | NLP | Computer Vision",
+    duration: "5 Months",
+    mode: "Online",
+    assistance: "100% Job Assistance",
+    color: "from-green-500 to-green-600",
+    description: "Dive into AI and machine learning with hands-on projects. Master neural networks, NLP, and cutting-edge AI technologies.",
+    topics: ["Machine Learning", "Deep Learning", "TensorFlow & PyTorch", "NLP", "Computer Vision", "Generative AI"],
+    //price: "₹35,000",
+    rating: 4.7,
+    students: 680,
   },
 ];
 
@@ -166,15 +211,23 @@ const Programs = () => {
 
                   <div className="flex items-center justify-between pt-4 border-t border-border">
                     <div>
-                      <p className="text-xs text-muted-foreground">Starting at</p>
-                      <p className="text-xl font-bold text-foreground">{program.price}</p>
+                      <p className="text-xs text-muted-foreground"></p>
+                      
                     </div>
-                    <Button className="hero-gradient" asChild>
-                      <Link to="/contact">
-                        Enroll Now
-                        <ArrowRight className="w-4 h-4 ml-2" />
-                      </Link>
-                    </Button>
+                    <div className="flex gap-2">
+                      <Button variant="outline" asChild>
+                        <Link to="/contact">
+                          Free Demo
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </Link>
+                      </Button>
+                      <Button className="hero-gradient" asChild>
+                        <Link to="/contact">
+                          Enroll Now
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </Link>
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>

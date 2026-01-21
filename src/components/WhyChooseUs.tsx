@@ -34,7 +34,7 @@ const WhyChooseUs = () => {
     },
     {
       icon: Briefcase,
-      title: "100% Placement Assistance",
+      title: "100% Job Assistance",
       points: [
         "Dedicated placement cell",
         "50+ hiring partners",

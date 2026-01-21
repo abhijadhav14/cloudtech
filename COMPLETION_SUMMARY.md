@@ -186,7 +186,7 @@ Thank you for your interest! Here are our details:
 
 🚀 Why Choose Us?
 ✨ Very Less Fees in Market
-⚡ 100% Placement Assistance
+⚡ 100% Job Assistance
 🏆 Professional Adaptability Training
 
 Our team will contact you soon!

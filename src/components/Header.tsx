@@ -2,7 +2,7 @@ import { Menu, X, Globe, Clock, Mail } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import CTSLogo from "@/assets/CTS.png";
+import CTSLogo from "@/assets/CTS.jpg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,10 +49,10 @@ const Header = () => {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3">
-              <img src={CTSLogo} alt="Cloud Tech Solutions" className="w-10 h-10 rounded-lg shadow-lg object-contain" />
+              <img src={CTSLogo} alt="Cloud Tech Solutions" className="w-14 h-14 rounded-lg shadow-2xl object-contain hover:scale-110 transition-transform" />
               <div>
-                <span className="font-heading font-bold text-xl text-foreground">
-                  Cloud Tech Solutions
+                <span className="font-heading font-black text-2xl bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-500 bg-clip-text text-transparent">
+                  Cloud Technology Solutions
                 </span>
                 <p className="text-xs text-muted-foreground hidden sm:block">
                   Beyond courses. Focused on careers

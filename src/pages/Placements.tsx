@@ -3,6 +3,20 @@ import Footer from "@/components/Footer";
 import { Star, Building, TrendingUp, Users, Award, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useState, type SyntheticEvent } from "react";
+import LogoTCS from "@/assets/company/TCS.png";
+import LogoTechMahindra from "@/assets/company/Tech_Mahindra.png";
+import LogoAWS from "@/assets/company/aws.png";
+import LogoCognizant from "@/assets/company/cognizant.jpg";
+import LogoHCL from "@/assets/company/hcl.png";
+import LogoIBM from "@/assets/company/ibm.png";
+import LogoMicrosoft from "@/assets/company/microsoft.png";
+import LogoInfosys from "@/assets/company/infosys.jpeg";
+import LogoWipro from "@/assets/company/Wipro.png";
+import LogoGoogle from "@/assets/company/Google.png";
+import LogoCisco from "@/assets/company/cisco.png";
+import LogoLT from "@/assets/company/LT.jpeg";
+import LogoAccenture from "@/assets/company/accenture.jpg";
 
 const placements = [
   {
@@ -26,7 +40,7 @@ const placements = [
   {
     name: "Anil Reddy",
     role: "Cloud Developer",
-    company: "L&T Infotech",
+    company: "Microsoft",
     salary: "6 LPA",
     program: "SAP",
     initials: "AR",
@@ -42,7 +56,7 @@ const placements = [
     quote: "The hands-on projects and real-world scenarios prepared me perfectly for my current role.",
   },
   {
-    name: "Vikram Singh",
+    name: "Vikram Patil",
     role: "Cloud Architect",
     company: "Google",
     salary: "18 LPA",
@@ -62,11 +76,74 @@ const placements = [
 ];
 
 const companies = [
-  "TCS", "Infosys", "Wipro", "Amazon", "Google", "Microsoft", 
-  "Tech Mahindra", "HCL", "Cognizant", "Accenture", "IBM", "Cisco"
+  {
+    name: "TCS",
+    logo: LogoTCS
+  },
+  {
+    name: "Infosys",
+    logo: LogoInfosys
+  },
+  {
+    name: "Wipro",
+    logo: LogoWipro
+  },
+  {
+    name: "Amazon",
+    logo: LogoAWS
+  },
+  {
+    name: "Google",
+    logo: LogoGoogle
+  },
+  {
+    name: "Microsoft",
+    logo: LogoMicrosoft
+  },
+  {
+    name: "Tech Mahindra",
+    logo: LogoTechMahindra
+  },
+  {
+    name: "HCL",
+    logo: LogoHCL
+  },
+  {
+    name: "Cognizant",
+    logo: LogoCognizant
+  },
+  {
+    name: "Accenture",
+    logo: LogoAccenture
+  },
+  {
+    name: "IBM",
+    logo: LogoIBM
+  },
+  {
+    name: "Cisco",
+    logo: LogoCisco
+  },
+  {
+    name: "L&T Infotech",
+    logo: LogoLT
+  }
 ];
 
 const Placements = () => {
+  const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
+
+  const handleLogoError = (
+    e: SyntheticEvent<HTMLImageElement, Event>,
+    company: (typeof companies)[number]
+  ) => {
+    setFailedImages((prev) => {
+      const next = new Set(prev);
+      next.add(company.name);
+      return next;
+    });
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -184,14 +261,28 @@ const Placements = () => {
           </div>
 
           <div className="flex flex-wrap justify-center gap-6">
-            {companies.map((company) => (
-              <div 
-                key={company}
-                className="bg-card px-8 py-4 rounded-xl shadow-sm hover:shadow-md transition-shadow"
-              >
-                <span className="font-semibold text-foreground">{company}</span>
-              </div>
-            ))}
+            {companies.map((company) => {
+              const failed = failedImages.has(company.name);
+              const hasLogo = Boolean(company.logo) && !failed;
+              return (
+                <div 
+                  key={company.name}
+                  className="bg-card px-8 py-6 rounded-xl shadow-sm hover:shadow-md transition-shadow flex items-center justify-center min-h-24 w-40"
+                >
+                  {hasLogo ? (
+                    <img
+                      src={company.logo}
+                      alt={`${company.name} logo`}
+                      className="h-12 max-h-14 object-contain"
+                      loading="lazy"
+                      onError={(e) => handleLogoError(e, company)}
+                    />
+                  ) : (
+                    <span className="font-semibold text-foreground text-center">{company.name}</span>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

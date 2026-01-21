@@ -125,8 +125,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Address</h3>
                     <p className="text-muted-foreground">
-                      Marthalli Bridge<br />
-                      Bangalore, Karnataka 560100, India
+                      Bangalore, Karnataka, India
                     </p>
                   </div>
                 </div>
@@ -362,23 +361,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="py-12 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="bg-card rounded-2xl overflow-hidden shadow-lg">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4284.466293311734!2d77.70214264172616!3d12.956801939341895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1768585139261!5m2!1sen!2sin"
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Cloud Tech Solutions Location"
-            />
-          </div>
-        </div>
-      </section>
+
 
       <Footer />
     </div>
